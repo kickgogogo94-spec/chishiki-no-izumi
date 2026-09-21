@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>知識の泉</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ===== 最新号 ===== -->
+  <section id="view-latest" class="view">
+    <header class="masthead">
+      <h1 class="masthead-title">知識の泉</h1>
+      <p class="masthead-sub"><span id="latest-date"></span>・<span id="latest-count"></span> STORIES</p>
+    </header>
+
+    <div class="hero" id="latest-hero">
+      <!-- JSで挿入 -->
+    </div>
+
+    <div class="issue-list">
+      <p class="section-label">IN THIS ISSUE</p>
+      <ol id="latest-list" class="story-list"></ol>
+    </div>
+  </section>
+
+  <!-- ===== バックナンバー ===== -->
+  <section id="view-archive" class="view hidden">
+    <header class="masthead">
+      <h1 class="masthead-title">バックナンバー</h1>
+      <p class="masthead-sub">DAILY ARCHIVE</p>
+    </header>
+    <div id="archive-list" class="archive-list"></div>
+  </section>
+
+  <!-- ===== 保存 ===== -->
+  <section id="view-saved" class="view hidden">
+    <header class="masthead">
+      <h1 class="masthead-title">保存</h1>
+      <p class="masthead-sub">SAVED STORIES</p>
+    </header>
+    <div id="saved-list" class="archive-list"></div>
+    <p id="saved-empty" class="empty-note hidden">まだ保存した記事はありません。記事の🔖で保存できます。</p>
+  </section>
+
+  <!-- ===== 記事詳細 ===== -->
+  <section id="view-article" class="view hidden">
+    <div class="article-topbar">
+      <button id="btn-back" class="icon-btn">&#8592;</button>
+      <span class="article-topbar-title">知識の泉</span>
+      <button id="btn-save" class="icon-btn">&#128278;</button>
+    </div>
+    <div class="article-banner" id="article-banner"></div>
+    <div class="article-body">
+      <p class="article-eyebrow" id="article-eyebrow"></p>
+      <h2 class="article-title" id="article-title"></h2>
+      <p class="article-meta" id="article-meta"></p>
+
+      <div class="briefing" id="article-briefing"></div>
+
+      <a class="source-link" id="article-source-link" target="_blank" rel="noopener">
+        元記事(Notion)を見る &#8594;
+      </a>
+    </div>
+
+    <button id="btn-next" class="next-fab">
+      <span class="next-fab-label" id="next-fab-label">次の記事へ</span>
+      <span class="next-fab-arrow">&#8594;</span>
+    </button>
+  </section>
+
+  <!-- ===== タブバー ===== -->
+  <nav id="tabbar">
+    <button class="tab" data-view="latest">
+      <span class="tab-icon">&#128220;</span><span>最新号</span>
+    </button>
+    <button class="tab" data-view="archive">
+      <span class="tab-icon">&#128218;</span><span>バックナンバー</span>
+    </button>
+    <button class="tab" data-view="saved">
+      <span class="tab-icon">&#128278;</span><span>保存</span>
+    </button>
+  </nav>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
